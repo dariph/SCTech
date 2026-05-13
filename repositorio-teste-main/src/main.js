@@ -20,8 +20,15 @@ async function main() {
     "Digite o segundo número: \n",
   ); // string -> texto-
 
-  const a = aString; // transforme
-  const b = bString; // transforme
+  const a = Number(aString);
+  if (isNaN(a)) {
+    throw new Error("O primeiro valor digitado não é um número válido.");
+  }
+
+  const b = Number(bString);
+  if (isNaN(b)) {
+    throw new Error("O segundo valor digitado não é um número válido.");
+  }
 
   // 1- Fazer a transformação para número -> Caso o usuário não digite um número, jogue um erro
   // 2- Criar as outras operações uma em cada arquivo e importar
@@ -29,19 +36,19 @@ async function main() {
 
   switch (respostaOperação) {
     case "+":
-      const respostaAdicao = adicao(aString, bString);
+      const respostaAdicao = adicao(a, b);
       console.log(`Resposta da operação: ${respostaAdicao}`);
       break;
     case "-":
-      const respostaSubtracao = subtracao(aString, bString);
+      const respostaSubtracao = subtracao(a, b);
       console.log(`Resposta da operação: ${respostaSubtracao}`);
       break;
     case "/":
-      const respostaDivisao = divisao(aString, bString);
+      const respostaDivisao = divisao(a, b);
       console.log(`Resposta da operação: ${respostaDivisao}`);
       break;
     case "*":
-      const respostaMultiplicacao = multiplicacao(aString, bString);
+      const respostaMultiplicacao = multiplicacao(a, b);
       console.log(`Resposta da operação: ${respostaMultiplicacao}`);
       break;
 

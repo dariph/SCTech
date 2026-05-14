@@ -46,6 +46,7 @@ async function main() {
       case "/":
         const respostaDivisao = divisao(a, b);
         console.log(`Resposta da operação: ${respostaDivisao}`);
+        // faltou colocar a validação de divisão por zero dentro da função de divisão
         break;
       case "*":
         const respostaMultiplicacao = multiplicacao(a, b);
